@@ -1,0 +1,8 @@
+<!-- <p-panelMenu [model]="items" [style]="{'width':'300px'}"></p-panelMenu> -->
+
+<!-- <p-slideMenu [model]="items" [viewportHeight]="550" [menuWidth]="500"></p-slideMenu> -->
+
+
+<h5>Popup</h5>
+<button #btn type="button" pButton icon="pi pi-bars" label="Show" (click)="menu.toggle($event)"></button>
+<p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="250"></p-slideMenu>

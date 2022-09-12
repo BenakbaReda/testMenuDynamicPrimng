@@ -1,0 +1,21 @@
+{
+  "categories": [
+
+
+  { "id": 1, "name": "CosmitcAcces",                                   "displayname": "Cosmetic accesoir et parfum"               , "catId": 0   },
+  { "id": 2, "name": "BeauterRelaxation",                              "displayname": "Matériels de beauté,coiffure, relaxation"  , "catId": 0   },
+  { "id": 3, "name": "Sport",                                          "displayname": "Sport accessoires complement coatching"    , "catId": 0   },
+
+
+	{ "id": 4, "name": "cosmetic materieux de beauté",                   "displayname": "Cosmetic accesoir et parfum"               , "catId": 1   },
+	{ "id": 5, "name": "accessoirs montres",                             "displayname": "accessoirs montres"                        , "catId": 1   },
+	{ "id": 6, "name": "Parfum",                                         "displayname": "Parfum"                                    , "catId": 1   },
+	{ "id": 7, "name": "Salons de beauté et de coiffures",               "displayname": "Salons de beauté et de coiffures"          , "catId": 2   },
+	{ "id": 8, "name": "Salles de sport",                                "displayname": "Salles de sport"                           , "catId": 2   },
+	{ "id": 9, "name": "Centres de soins corporels",                     "displayname": "Centres de soins corporels"                , "catId": 2   },
+	{ "id": 10,"name": "salle de sport et compléments",                  "displayname": "salle de sport et compléments"             , "catId": 3   },
+	{ "id": 11,"name": "sports accessoires et appareils et equipements", "displayname": "sports accessoires ,appareils,equipements" , "catId": 3   },
+	{ "id": 12,"name": "formateurs et spécialistes",                     "displayname": "formateurs et spécialistes"                , "catId": 3   }
+
+  ]
+}

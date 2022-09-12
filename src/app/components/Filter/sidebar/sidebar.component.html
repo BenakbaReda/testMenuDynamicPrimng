@@ -1,0 +1,16 @@
+<p-sidebar   [(visible)]="isvisible"   [fullScreen]="currentIsfullScreen"  [position]="currentPosition" [baseZIndex]="10000">
+  <h1 style="font-weight:normal">Sidebar</h1>
+  <app-categories     ></app-categories>
+
+</p-sidebar>
+
+
+<div class="card">
+      <div class="flex align-items-center justify-content-center   m-2 border-round"  >
+        <p-button type="button" (click)="isvisible = true" icon="pi pi-align-justify"></p-button>
+      </div>
+</div>
+
+
+
+
