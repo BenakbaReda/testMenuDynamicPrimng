@@ -165,7 +165,9 @@ const APP_PRIMENG_MODULE = [
   SliderModule,
   ButtonModule,
   SidebarModule,
-  PanelMenuModule
+  PanelMenuModule,
+  InputTextModule,
+  MenubarModule
 ];
 
 

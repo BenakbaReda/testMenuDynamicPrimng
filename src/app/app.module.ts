@@ -7,19 +7,23 @@ import { CategoriesComponent } from './components/Filter/categories/categories.c
 import { SidebarComponent } from './components/Filter/sidebar/sidebar.component';
 import { PrimngModule } from './modules/primeng/primeng/primeng.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriesComponent,
-    SidebarComponent
+    SidebarComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     PrimngModule
