@@ -1,23 +1,21 @@
 {
   "categories": [
 
-
-    { "id": 1, "name": "CosmitcAcces",       "displayname": "Cosmetic accesoir et parfum"               , "catId": 0   },
-    { "id": 2, "name": "Relaxation",         "displayname": "Matériels de beauté,coiffure, relaxation"  , "catId": 0   },
-    { "id": 3, "name": "Sport",              "displayname": "Sport accessoires complement coatching"    , "catId": 0   },
-
-
-	{ "id": 4, "name": "cosmetic",           "displayname": "Cosmetic accesoir et parfum"               , "catId": 1   },
-	{ "id": 5, "name": "montres",            "displayname": "accessoirs montres"                        , "catId": 1   },
-	{ "id": 6, "name": "Parfum",             "displayname": "Parfum"                                    , "catId": 1   },
-
-	{ "id": 7, "name": "beaute",             "displayname": "Salons de beauté et de coiffures"          , "catId": 2   },
-	{ "id": 8, "name": "sport",              "displayname": "Salles de sport"                           , "catId": 2   },
-	{ "id": 9, "name": "soins",              "displayname": "Centres de soins corporels"                , "catId": 2   },
-
-	{ "id": 10,"name": "complements",        "displayname": "salle de sport et compléments"             , "catId": 3   },
-	{ "id": 11,"name": "equipements",        "displayname": "sports accessoires ,appareils,equipements" , "catId": 3   },
-	{ "id": 12,"name": "formateurs",         "displayname": "formateurs et spécialistes"                , "catId": 3   }
+	{ "id": 10,"name": "complements",        "displayname": "salle de sport et compléments"             , "idParent": 3   },
+    { "id": 1, "name": "CosmitcAcces",       "displayname": "Cosmetic accesoir et parfum"               , "idParent": 0   },
+    { "id": 2, "name": "Relaxation",         "displayname": "Matériels de beauté,coiffure, relaxation"  , "idParent": 0   },
+	{ "id": 7, "name": "beaute",             "displayname": "Salons de beauté et de coiffures"          , "idParent": 2   },																						 
+	{ "id": 4, "name": "cosmetic",           "displayname": "Cosmetic accesoir et parfum"               , "idParent": 1   },
+	{ "id": 6, "name": "Parfum",             "displayname": "Parfum"                                    , "idParent": 1   },
+	{ "id": 8, "name": "sport",              "displayname": "Salles de sport"                           , "idParent": 2   },
+	{ "id": 3, "name": "Sport",              "displayname": "Sport accessoires complement coatching"    , "idParent": 0   },
+	{ "id": 9, "name": "soins",              "displayname": "Centres de soins corporels"                , "idParent": 2   },
+	{ "id": 11,"name": "equipements",        "displayname": "sports accessoires ,appareils,equipements" , "idParent": 3   },
+    { "id": 13,"name": "complements",        "displayname": "salle de sport et compléments"             , "idParent": 4   },
+	{ "id": 12,"name": "formateurs",         "displayname": "formateurs et spécialistes"                , "idParent": 3   },
+	{ "id": 14,"name": "equipements",        "displayname": "sports accessoires ,appareils,equipements" , "idParent": 4   },
+	{ "id": 5, "name": "montres",            "displayname": "accessoirs montres"                        , "idParent": 1   },
+	{ "id": 15,"name": "formateurs",         "displayname": "formateurs et spécialistes"                , "idParent": 4   }
 
   ]
 }

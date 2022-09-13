@@ -4,6 +4,15 @@ export interface Icategorie {
   name: string,
   displayname: string,
   url :string,
-  catId: number,
+  idParent: number,
+ 
+}
 
+
+export interface IMenuCategorie {
+
+  id: number,
+  name: string,
+  idroot: number,
+  items?:IMenuCategorie[]
 }

@@ -47,11 +47,11 @@ export class CategoriesComponent implements OnInit {
       this.Categories.forEach(x =>
                                   {
 
-                                      if( x.catId ==0){
+                                      if( x.idParent ==0){
                                             console.log(x)
                                             this.items.push(
                                               {
-                                                  id :"Root" + x.catId + "_id" + x.id ,
+                                                  id :"Root" + x.idParent + "_id" + x.id ,
                                                   label: x.displayname,
                                                   icon:'pi pi-fw pi-file'
                                               })
