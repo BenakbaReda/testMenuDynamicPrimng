@@ -1,8 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MegaMenuItem, MenuItem} from 'primeng/api';
 import { Icategorie, IMenuCategorie } from 'src/app/models/icategorie';
 import { CategorieService } from 'src/app/services/designe/categorie.service';
 
+import {SelectItem} from 'primeng/api';
+
+
+interface MenuType {
+  name: string,
+  id: number
+}
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,75 +18,117 @@ import { CategorieService } from 'src/app/services/designe/categorie.service';
 })
 export class NavBarComponent implements OnInit {
 
-    Categories:Icategorie[];
-    items: MenuItem[]=[];
-
-    value: string;
   
-  constructor(private categorieService: CategorieService) { }
 
+  //only for proto
+  /***************************************** */
+    isLogin:boolean = true;
+    listMenuType: MenuType[] =[
+      { name:"SlideMenu" , id:1},
+      { name:"PanelMenu" , id:2},
+      { name:"TieredMenu", id:3},
+    //  { name:"Menu"      , id:3},
+    //  { name:"MegaMenu"  , id:5},
+    ]
+    selectedMenyTyp: MenuType ={ name:"SlideMenu" , id:1} ;
+   /***************************************** */
+
+
+  Categories:Icategorie[];
+  items: MenuItem[]=[];
+
+
+  searchValue: string;
+  
+  constructor(private categorieService: CategorieService) { 
+ 
+  }
+  itemPanelMenu: MenuItem[];
   ngOnInit(): void {
-
     console.log("NavBarComponent : ngOnInit()");
     this.categorieService.SubCategories$.subscribe(
       val => {
-               // console.log(val);
+                // console.log(val);
                 this.Categories= this.categorieService.Categories ;
                 this.buildlistmenu(this.Categories );
               },
       err => console.error("sub " + err),
       () => console.log("Sub Complete")
     );
-    this.SubscriberMenuCategories();
+    this.getCategories();
+
+
+    
+       
+ 
 
   }
 
-  SubscriberMenuCategories(){
+  getCategories(){
     this.categorieService.GetMenucategories() ;
   }
 
 
-  buildlistmenu( List: Icategorie[])  
- {
- 
+buildlistmenu( List: Icategorie[])  
+{
     let item : IMenuCategorie;
     item ={ id : 0, idroot:0, name: "categorie"};
-    item.items = this.buildMenuCategorie(List);
+    item.items = this.categorieService.buildMenuCategorie(List);
     console.log( item);
 
-
-
-
-
- }
-
-
+    this.buildMenuItem(item,this.items);
+    console.log( this.items);
  
- buildMenuCategorie( List: Icategorie[],   parentid:number=0) : IMenuCategorie[]
-{
-  const items : IMenuCategorie[]=[];
- // console.log( "buildmenull  parentid :" +parentid  );
-   List.forEach(cat =>
-   {
-       if ( cat.idParent == parentid ){
-            const elm = { id : cat.id, idroot: cat.idParent , name: cat.displayname};
-            items.push(elm);
-            //console.log( "add elm  Id :" + cat.id  );
-        }
-        else
-        {
-            const rootitem = items.find(y=> y.id== cat.idParent)
-             if ( rootitem ){
-               // console.log( "found item  ID :" +rootitem.id  );
-       
-                rootitem.items=this.buildMenuCategorie(List, cat.idParent) 
-            }
-        }
-   }) 
 
-   // console.log( "Icategorie : " + JSON.stringify(x));
-   return items;
 }
 
+
+buildMenuItem( cat: IMenuCategorie  ,items: MenuItem[]   ) 
+{
  
+  console.log( "cat root name : " + cat.name);
+  cat.items.forEach(y =>
+  {
+        console.log( "cat child name : " + y.name);
+        const item: MenuItem ={
+          label: y.name ,
+          id: "root" + y.idroot + " Id"+ y.id,
+          icon: 'pi pi-pw pi-file',
+        }
+        items.push(item);
+        if(y.items){
+          console.log( "length : " + y.items.length);
+          if(y.items.length>0){
+            item.items=[];
+            this.buildMenuItem(y, item.items  )
+          }
+        }
+  }) 
+}
+
+
+
+onclick_logout()
+{
+      this.isLogin=false;  
+}
+
+onclick_login()
+{
+      this.isLogin=true;  
+}
+
+
+
+
+
+
+
+
+
+
+toggleMenu($event)
+{
+  this.isLogin=true;  
+}
 }

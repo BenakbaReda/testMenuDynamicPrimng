@@ -14,9 +14,50 @@
 	{ "id": 8, "name": "sport",              "displayname": "Salles de sport"                           , "idParent": 2   },
 	{ "id": 9, "name": "soins",              "displayname": "Centres de soins corporels"                , "idParent": 2   },
 																										 
+	{ "id": 13, "name": "test",             "displayname": "Salons de beauté et de coiffures"            , "idParent": 4   },
+ 
+	
+	
+	
+	
 	{ "id": 10,"name": "complements",        "displayname": "salle de sport et compléments"             , "idParent": 3   },
 	{ "id": 11,"name": "equipements",        "displayname": "sports accessoires ,appareils,equipements" , "idParent": 3   },
 	{ "id": 12,"name": "formateurs",         "displayname": "formateurs et spécialistes"                , "idParent": 3   }
 
   ]
 }
+
+
+{
+  "categories": [
+
+
+    { "id": 1, "name": "Books",       	"displayname": "Books"  			, "idParent": 0   },
+    { "id": 2, "name": "Movies",        "displayname": "Movies" 			, "idParent": 0   },
+    { "id": 3, "name": "Games",         "displayname": "Games"  			, "idParent": 0   },
+    { "id": 4, "name": "Music",         "displayname": "Music"  			, "idParent": 0   },
+									    
+									    
+	{ "id": 14, "name": "Hardcover",    "displayname": "Hardcover"  		, "idParent": 1   },
+	{ "id": 15, "name": "Paperback",    "displayname": "Paperback"  		, "idParent": 1   },
+	{ "id": 16, "name": "Electronic",   "displayname": "Electronic" 		, "idParent": 1   },
+																									 
+	{ "id": 17, "name": "DVD",          "displayname": "DVD"            	, "idParent": 2   },
+	{ "id": 18, "name": "BluRay",       "displayname": "BluRay"     		, "idParent": 2   },
+	{ "id": 19, "name": "Download",     "displayname": "Download"			, "idParent": 2   },
+									    
+									    
+	{ "id": 110, "name": "XBox",        "displayname": "XBox"            	, "idParent": 3   },
+	{ "id": 111, "name": "PC",          "displayname": "PC"            		, "idParent": 3   },
+ 
+ 
+ 	{ "id": 210, "name": "need",        "displayname": "need for speed"     , "idParent": 110   },
+	{ "id": 211, "name": "tome",          "displayname": "tome raider"      , "idParent": 110  }
+	
+
+  ]
+}
+
+
+
+ 

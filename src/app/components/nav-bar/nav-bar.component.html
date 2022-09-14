@@ -1,71 +1,54 @@
- 
 
  
-<!-- <p-menubar [model]="items">
-    <ng-template pTemplate="start">
-        <img src="/assets/logo/logo.png" height="50" class="mr-2">
-    </ng-template>
-    <ng-template pTemplate="end">
-
-        <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input type="text" pInputText placeholder="Search" [(ngModel)]="value" />
-        </span>
-
-        <button type="button" pButton label="login"    class="p-button-rounded" icon="pi pi-user"      style="margin-left:.25em"  ></button>
-        <button type="button" pButton label="register" class="p-button-rounded" icon="pi pi-user-edit" style="margin-left:.25em"  ></button>
-    </ng-template>
-</p-menubar>
-<p-menubar [model]="items">
-    <ng-template pTemplate="start">
-        <img src="/assets/logo/logo.png" height="40" class="mr-2">
-    </ng-template>
-    <ng-template pTemplate="end">
-        <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input type="text" pInputText placeholder="Search" [(ngModel)]="value" />
-        </span>
-        <button type="button" pButton label="Logout" class="p-button-rounded" icon="pi pi-power-off" style="margin-left:.25em"  ></button>
-    </ng-template>
-</p-menubar> -->
-
-
-
-<p-menubar >
-    <ng-template pTemplate="start">
-        <img src="/assets/logo/logo.png" height="35" class="mr-2">
-        <button #btn type="button" pButton  class="p-button-rounded p-button-secondary " icon="pi pi-bars" label="Categories" (click)="menu.toggle($event)"></button>
-        <p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="250" [style]="{'min-width':'175px'}" ></p-slideMenu>
-    </ng-template>
-
-
-    <ng-template pTemplate="end">
-        <span class="p-input-icon-left">
-            <i class="pi pi-search"></i>
-            <input type="text" pInputText placeholder="Search" [(ngModel)]="value" />
-        </span>
-        <button type="button" pButton label="login"    class="p-button-rounded" icon="pi pi-user"      style="margin-left:.25em"  ></button>
-        <button type="button" pButton label="register" class="p-button-rounded" icon="pi pi-user-edit" style="margin-left:.25em"  ></button>
-    </ng-template>
-</p-menubar>
+<!--  <p-dropdown [options]="listMenuType" 
+ [(ngModel)]="selectedMenyTyp" 
+ placeholder="Select a menu type" 
+ optionLabel="name"   
+ [showClear]="true"></p-dropdown> -->
+<!-- <h5>{{selectedMenyTyp | json}} </h5> -->
 
 
 <p-menubar  >
-    <ng-template pTemplate="start">
+    <ng-template pTemplate="start" >
         <img src="/assets/logo/logo.png" height="35" class="mr-2">
-        <button #btn type="button"  class="p-button-rounded p-button-secondary " pButton icon="pi pi-bars" label="Categories" (click)="menu.toggle($event)"></button>
-        <p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="500" [style]="{'min-width':'350px'}" ></p-slideMenu>
+       
+      
+        
     </ng-template>
     <ng-template pTemplate="end">
         <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
-            <input type="text" pInputText placeholder="Search" [(ngModel)]="value" />
+            <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue" />
         </span>
-        <button type="button" pButton label="Logout" class="p-button-rounded" icon="pi pi-power-off" style="margin-left:.25em"  ></button>
+
+        <button type="button" *ngIf="!isLogin" pButton label="login"  (click)="onclick_login()"     class="p-button-rounded" icon="pi pi-user"      style="margin-left:.25em"  ></button>
+        <button type="button" *ngIf="!isLogin" pButton label="register" class="p-button-rounded" icon="pi pi-user-edit" style="margin-left:.25em"  ></button>
+
+        <button type="button" *ngIf="isLogin" pButton label="Logout" class="p-button-rounded" icon="pi pi-power-off" style="margin-left:.25em"  (click)="onclick_logout()"   ></button>
     </ng-template>
 </p-menubar>
 
+<!-- <button #btn type="button" pButton  class="p-button-rounded p-button-secondary " icon="pi pi-bars" label="Categories" (click)="menu.toggle($event)"></button> -->
+<!-- <p-slideMenu  *ngIf="(items.length>0) && (selectedMenyTyp.id==1)"  #menu [model]="items"   [viewportHeight]="250" [style]="{'min-width':'175px'}" ></p-slideMenu>
+        
+<p-panelMenu  *ngIf="(items.length>0) && (selectedMenyTyp.id==2)"        [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
+<p-tieredMenu *ngIf="(items.length>0) && (selectedMenyTyp.id==3)"        [model]="items"></p-tieredMenu> -->
 
+<div style="height: 50px;" >
+   
 
+</div>
 
+<div class="grid">
+    <div class="col">
+        <p-slideMenu  *ngIf="(items.length>0) "  #menu [model]="items"   [viewportHeight]="250" [style]="{'width':'300px'}" ></p-slideMenu>
  
+    </div>
+    <div class="col">
+        <p-panelMenu  *ngIf="(items.length>0) "        [model]="items" [style]="{'width':'300px'}"></p-panelMenu>
+
+    </div>
+    <div class="col">
+        <p-tieredMenu *ngIf="(items.length>0)"        [model]="items"  [style]="{'width':'300px'}"></p-tieredMenu>
+    </div>
+</div>

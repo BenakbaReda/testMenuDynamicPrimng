@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { LoginComponent } from './components/client/login/login.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     AppComponent,
     CategoriesComponent,
     SidebarComponent,
-    NavBarComponent
+    NavBarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -161,13 +161,22 @@ const APP_PRIMENG_MODULE = [
   TooltipModule,
   TreeModule,
   TreeTableModule*/
-  SlideMenuModule,
+
   SliderModule,
   ButtonModule,
-  SidebarModule,
-  PanelMenuModule,
   InputTextModule,
-  MenubarModule
+
+  SidebarModule,
+
+  PanelMenuModule,
+  SlideMenuModule,
+  MenubarModule,
+  MenuModule,
+  TieredMenuModule,
+  MegaMenuModule,
+
+  
+  DropdownModule
 ];
 
 

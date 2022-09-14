@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AsyncSubject, Observable, ReplaySubject, throwError } from 'rxjs';
-import { Icategorie } from 'src/app/models/icategorie';
+import { Icategorie, IMenuCategorie } from 'src/app/models/icategorie';
 
 import { environment } from 'src/environments/environment';
 import { BaseHttpService } from '../base/base-http.service';
@@ -40,4 +40,31 @@ export class CategorieService extends BaseHttpService<Icategorie, number> {
         })
 
    }
+
+   buildMenuCategorie( List: Icategorie[],   parentid:number=0) : IMenuCategorie[]
+   {
+     const items : IMenuCategorie[]=[];
+     // console.log( "buildmenull  parentid :" +parentid  );
+     List.forEach(cat =>
+     {
+         if ( cat.idParent == parentid ){
+             const elm = { id : cat.id, idroot: cat.idParent , name: cat.name};
+             items.push(elm);
+             //console.log( "add elm  Id :" + cat.id  );
+         }
+         else
+         {
+             const rootitem = items.find(y=> y.id== cat.idParent)
+               if ( rootitem ){
+                 // console.log( "found item  ID :" +rootitem.id  );
+                 rootitem.items=this.buildMenuCategorie(List, cat.idParent) 
+             }
+         }
+     }) 
+   
+     // console.log( "Icategorie : " + JSON.stringify(x));
+     return items;
+   }
+
+
 }
